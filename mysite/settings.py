@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!bl^t1ayhqara4un+7gkpq$_4lal8^8q&lb4y^h*=s$893bbte
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mahtamira.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -35,6 +35,12 @@ INSTALLED_APPS = [
     'home',
     'autos',
     'hello',
+    'ads',
+    'django_extensions',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'rest_framework',
+    'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,9 +88,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mahtamira$default',
+        'USER': 'mahtamira',
+        'PASSWORD': 'm.mira1183',
+        'HOST': 'mahtamira.mysql.pythonanywhere-services.com',
+         'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
+   }
 }
 
 

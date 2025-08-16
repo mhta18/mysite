@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'social_django',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -63,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+LOGIN_REDIRECT_URL = '/ads/'  # Redirect to the ads list page after login
+
 
 TEMPLATES = [
     {
